@@ -15,6 +15,7 @@
 		6CC2AF942C2A23B600774FBE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF932C2A23B600774FBE /* Color.swift */; };
 		6CC2AF962C2A27AC00774FBE /* CustomIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF952C2A27AC00774FBE /* CustomIcons.swift */; };
 		6CC2AF982C2A288000774FBE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF972C2A288000774FBE /* Image.swift */; };
+		6CC2AF9B2C2A2CBA00774FBE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF9A2C2A2CBA00774FBE /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		6CC2AF932C2A23B600774FBE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6CC2AF952C2A27AC00774FBE /* CustomIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcons.swift; sourceTree = "<group>"; };
 		6CC2AF972C2A288000774FBE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		6CC2AF9A2C2A2CBA00774FBE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		6CBE72F12C2A1BAC00E54C05 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				6CC2AF992C2A2C9000774FBE /* Model */,
 				6CBE73012C2A1C2F00E54C05 /* App */,
 				6CBE73022C2A1C3F00E54C05 /* Resources */,
 				6CC2AF922C2A236B00774FBE /* Extensions */,
@@ -121,6 +124,14 @@
 				6CC2AF972C2A288000774FBE /* Image.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6CC2AF992C2A2C9000774FBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CC2AF9A2C2A2CBA00774FBE /* Transaction.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CC2AF9B2C2A2CBA00774FBE /* Transaction.swift in Sources */,
 				6CBE73042C2A1C6A00E54C05 /* CustomFonts.swift in Sources */,
 				6CC2AF982C2A288000774FBE /* Image.swift in Sources */,
 				6CC2AF942C2A23B600774FBE /* Color.swift in Sources */,
