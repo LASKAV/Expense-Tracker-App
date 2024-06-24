@@ -11,6 +11,10 @@
 		6CBE72F52C2A1BAD00E54C05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE72F42C2A1BAD00E54C05 /* ContentView.swift */; };
 		6CBE72F72C2A1BAF00E54C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBE72F62C2A1BAF00E54C05 /* Assets.xcassets */; };
 		6CBE72FB2C2A1BAF00E54C05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBE72FA2C2A1BAF00E54C05 /* Preview Assets.xcassets */; };
+		6CBE73042C2A1C6A00E54C05 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE73032C2A1C6A00E54C05 /* CustomFonts.swift */; };
+		6CC2AF942C2A23B600774FBE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF932C2A23B600774FBE /* Color.swift */; };
+		6CC2AF962C2A27AC00774FBE /* CustomIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF952C2A27AC00774FBE /* CustomIcons.swift */; };
+		6CC2AF982C2A288000774FBE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AF972C2A288000774FBE /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,11 @@
 		6CBE72F62C2A1BAF00E54C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CBE72F82C2A1BAF00E54C05 /* ExpenseTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExpenseTracker.entitlements; sourceTree = "<group>"; };
 		6CBE72FA2C2A1BAF00E54C05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6CBE73032C2A1C6A00E54C05 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		6CBE73072C2A1D9B00E54C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CC2AF932C2A23B600774FBE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		6CC2AF952C2A27AC00774FBE /* CustomIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcons.swift; sourceTree = "<group>"; };
+		6CC2AF972C2A288000774FBE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +61,10 @@
 		6CBE72F12C2A1BAC00E54C05 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				6CBE72F22C2A1BAD00E54C05 /* ExpenseTrackerApp.swift */,
-				6CBE72F42C2A1BAD00E54C05 /* ContentView.swift */,
-				6CBE72F62C2A1BAF00E54C05 /* Assets.xcassets */,
-				6CBE72F82C2A1BAF00E54C05 /* ExpenseTracker.entitlements */,
+				6CBE73012C2A1C2F00E54C05 /* App */,
+				6CBE73022C2A1C3F00E54C05 /* Resources */,
+				6CC2AF922C2A236B00774FBE /* Extensions */,
+				6CBE73062C2A1CA300E54C05 /* Configurations */,
 				6CBE72F92C2A1BAF00E54C05 /* Preview Content */,
 			);
 			path = ExpenseTracker;
@@ -67,6 +76,51 @@
 				6CBE72FA2C2A1BAF00E54C05 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6CBE73012C2A1C2F00E54C05 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6CBE72F22C2A1BAD00E54C05 /* ExpenseTrackerApp.swift */,
+				6CBE72F42C2A1BAD00E54C05 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6CBE73022C2A1C3F00E54C05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6CBE73052C2A1C7C00E54C05 /* Fonts */,
+				6CC2AF952C2A27AC00774FBE /* CustomIcons.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6CBE73052C2A1C7C00E54C05 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6CBE73032C2A1C6A00E54C05 /* CustomFonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6CBE73062C2A1CA300E54C05 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				6CBE73072C2A1D9B00E54C05 /* Info.plist */,
+				6CBE72F62C2A1BAF00E54C05 /* Assets.xcassets */,
+				6CBE72F82C2A1BAF00E54C05 /* ExpenseTracker.entitlements */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		6CC2AF922C2A236B00774FBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6CC2AF932C2A23B600774FBE /* Color.swift */,
+				6CC2AF972C2A288000774FBE /* Image.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CBE73042C2A1C6A00E54C05 /* CustomFonts.swift in Sources */,
+				6CC2AF982C2A288000774FBE /* Image.swift in Sources */,
+				6CC2AF942C2A23B600774FBE /* Color.swift in Sources */,
 				6CBE72F52C2A1BAD00E54C05 /* ContentView.swift in Sources */,
 				6CBE72F32C2A1BAD00E54C05 /* ExpenseTrackerApp.swift in Sources */,
+				6CC2AF962C2A27AC00774FBE /* CustomIcons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ExpenseTracker/ExpenseTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ExpenseTracker/Configurations/ExpenseTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExpenseTracker/Preview Content\"";
@@ -274,6 +332,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExpenseTracker/Configurations/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -292,7 +352,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.asgard.ExpenseTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,7 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ExpenseTracker/ExpenseTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ExpenseTracker/Configurations/ExpenseTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExpenseTracker/Preview Content\"";
@@ -312,6 +373,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExpenseTracker/Configurations/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -330,7 +393,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.asgard.ExpenseTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
