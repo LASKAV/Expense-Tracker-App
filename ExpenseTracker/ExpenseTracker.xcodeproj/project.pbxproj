@@ -21,6 +21,7 @@
 		6CC2AFA22C2B66F900774FBE /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AFA12C2B66F900774FBE /* DateFormatter.swift */; };
 		6CC2AFA42C2B67EB00774FBE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AFA32C2B67EB00774FBE /* String.swift */; };
 		6CC2AFA72C2B6CF200774FBE /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 6CC2AFA62C2B6CF200774FBE /* SwiftUIFontIcon */; };
+		6CC2AFAA2C2B6FC900774FBE /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AFA92C2B6FC900774FBE /* TransactionListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		6CC2AF9F2C2A30C000774FBE /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		6CC2AFA12C2B66F900774FBE /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		6CC2AFA32C2B67EB00774FBE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6CC2AFA92C2B6FC900774FBE /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				6CBE73012C2A1C2F00E54C05 /* App */,
 				6CC2AF992C2A2C9000774FBE /* Model */,
+				6CC2AFA82C2B6F8700774FBE /* ViewModel */,
 				6CC2AF9E2C2A309E00774FBE /* View */,
 				6CBE73022C2A1C3F00E54C05 /* Resources */,
 				6CC2AF922C2A236B00774FBE /* Extensions */,
@@ -154,6 +157,14 @@
 				6CC2AF9F2C2A30C000774FBE /* TransactionRow.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6CC2AFA82C2B6F8700774FBE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6CC2AFA92C2B6FC900774FBE /* TransactionListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				6CBE73042C2A1C6A00E54C05 /* CustomFonts.swift in Sources */,
 				6CC2AFA22C2B66F900774FBE /* DateFormatter.swift in Sources */,
 				6CC2AF982C2A288000774FBE /* Image.swift in Sources */,
+				6CC2AFAA2C2B6FC900774FBE /* TransactionListViewModel.swift in Sources */,
 				6CC2AF942C2A23B600774FBE /* Color.swift in Sources */,
 				6CBE72F52C2A1BAD00E54C05 /* ContentView.swift in Sources */,
 				6CBE72F32C2A1BAD00E54C05 /* ExpenseTrackerApp.swift in Sources */,
