@@ -1,9 +1,16 @@
 import Foundation
-import SwiftUI
+import Combine
 
 
 final class TransactionListViewModel: ObservableObject {
-    @Published var transaction: [Transaction] = []
+    @Published var transactions: [Transaction] = []
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        getTransactions()
+    }
+    
     
     func getTransactions() {
         guard let url = URL(string: "https://designcode.io/data/transactions.json") else {
@@ -22,11 +29,16 @@ final class TransactionListViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
-                        
+                    case .failure(let error):
+                        print("Error fetching transactions:", error.localizedDescription)
+                    case .finished:
+                        print("Finished fetching transactions")
                 }
-            } receiveValue: { [Transaction] in
-                <#code#>
+            } receiveValue: { [weak self] result in
+                self?.transactions = result
+                dump(self?.transactions)
             }
+            .store(in: &cancellables)
 
     }
 }
