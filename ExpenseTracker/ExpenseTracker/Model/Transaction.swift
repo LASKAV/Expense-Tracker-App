@@ -1,5 +1,5 @@
 import Foundation
-
+import SwiftUIFontIcon
 
 enum TransactionType: String {
     case debit = "debit"
@@ -21,6 +21,13 @@ struct Transaction: Identifiable, Decodable, Hashable {
     var isTransfer: Bool
     var isExpense: Bool
     var isEdited: Bool
+    
+    var icon: FontAwesomeCode {
+        if let category = Category.all.first(where: {$0.id == categoryId}) {
+            return category.icon
+        }
+        return .question
+    }
     
     var dateParsed: Date {
         date.dateParsed()
