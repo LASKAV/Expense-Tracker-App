@@ -22,6 +22,7 @@
 		6CC2AFA42C2B67EB00774FBE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AFA32C2B67EB00774FBE /* String.swift */; };
 		6CC2AFA72C2B6CF200774FBE /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 6CC2AFA62C2B6CF200774FBE /* SwiftUIFontIcon */; };
 		6CC2AFAA2C2B6FC900774FBE /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2AFA92C2B6FC900774FBE /* TransactionListViewModel.swift */; };
+		6CD7D17C2C2EDFDE0081E4CA /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD7D17B2C2EDFDE0081E4CA /* RecentTransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		6CC2AFA12C2B66F900774FBE /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		6CC2AFA32C2B67EB00774FBE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		6CC2AFA92C2B6FC900774FBE /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		6CD7D17B2C2EDFDE0081E4CA /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				6CC2AF9F2C2A30C000774FBE /* TransactionRow.swift */,
+				6CD7D17B2C2EDFDE0081E4CA /* RecentTransactionList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CC2AFA02C2A30C000774FBE /* TransactionRow.swift in Sources */,
+				6CD7D17C2C2EDFDE0081E4CA /* RecentTransactionList.swift in Sources */,
 				6CC2AFA42C2B67EB00774FBE /* String.swift in Sources */,
 				6CC2AF9D2C2A2F5600774FBE /* PreviewData.swift in Sources */,
 				6CC2AF9B2C2A2CBA00774FBE /* Transaction.swift in Sources */,
