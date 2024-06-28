@@ -7,7 +7,7 @@ enum TransactionType: String {
 }
 
 
-struct Transaction: Identifiable, Decodable {
+struct Transaction: Identifiable, Decodable, Hashable {
     let id: Int
     let date: String
     let institution: String
