@@ -7,3 +7,4 @@ extension Color {
     static let customText = Color("Text")
     static let systemBackground = Color(uiColor: .systemBackground)
 }
+

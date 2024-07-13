@@ -26,7 +26,9 @@ struct ContentView: View {
                         .foregroundStyle(Color.customIcon, .primary)
                 }
             }
-        }.navigationViewStyle(.stack) // iOS new version
+        }
+        .navigationViewStyle(.stack) // iOS new version
+        .accentColor(.primary)
     }
 }
 
