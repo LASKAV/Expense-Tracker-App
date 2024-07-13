@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-var transactionPreviewData = Transaction(id: 1, date: "01/24/2022",
+var transactionPreviewData = Transaction(id: 1, date: "07/13/2024",
                                          institution: "Desjardins",
                                          account: "Visa Desjardins",
                                          merchant: "Apple",
