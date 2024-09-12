@@ -12,14 +12,13 @@ struct CustomTabBar: View {
                     Label("Home", systemImage: "house")
                 }
             
-            
-            Text("Alerts")
+            ChartsScreen()
                 .tabItem {
                     Label("Charts", systemImage: "cellularbars")
                 }
             
             
-            Text("Settings")
+            SettingsScreen()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

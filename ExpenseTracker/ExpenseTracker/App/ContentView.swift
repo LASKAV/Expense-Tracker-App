@@ -14,13 +14,13 @@ struct ContentView: View {
                 }
             
             
-            Text("Alerts")
+            ChartsScreen()
                 .tabItem {
                     Label("Charts", systemImage: "cellularbars")
                 }
             
             
-            Text("Settings")
+            SettingsScreen()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
