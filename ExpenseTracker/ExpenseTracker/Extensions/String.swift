@@ -9,7 +9,7 @@ extension String {
     }
 }
 
-extension Date: Strideable {
+extension Date {
     func formatted() -> String {
         return self.formatted(.dateTime.year().month().day())
     }

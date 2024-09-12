@@ -1,8 +1,7 @@
 import SwiftUI
-import SwiftUICharts
-import Charts
 
-struct ContentView: View {
+struct CustomTabBar: View {
+    
     @State private var activeTab: TabModel = .home
     
     var body: some View {
@@ -26,11 +25,9 @@ struct ContentView: View {
                 }
         }
     }
-    
 }
 
-
-struct ContentView_Previews: PreviewProvider {
+struct CustomTabBar_Previews: PreviewProvider {
     static let transactionListVM: TransactionListViewModel = {
         let transactionListVM = TransactionListViewModel()
         transactionListVM.transactions = transactionListPreviewData
@@ -38,7 +35,7 @@ struct ContentView_Previews: PreviewProvider {
     }()
     
     static var previews: some View {
-        ContentView()
+        CustomTabBar()
             .environmentObject(transactionListVM)
     }
 }
