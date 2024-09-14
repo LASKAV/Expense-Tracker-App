@@ -55,8 +55,13 @@ final class TransactionListViewModel: ObservableObject {
     func accumulateTransactions() -> TransactionPrefixSum {
         print("accumulateTransactions")
         guard !transactions.isEmpty else { return [] }
+        
+        // Date of start of counting "02/17/2022"
+
         let today = "02/17/2022".dateParsed() // Date()
+        
         let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
+        
         print("dateInterval", dateInterval)
         
         var sum: Double = .zero
@@ -76,3 +81,4 @@ final class TransactionListViewModel: ObservableObject {
     }
     
 }
+

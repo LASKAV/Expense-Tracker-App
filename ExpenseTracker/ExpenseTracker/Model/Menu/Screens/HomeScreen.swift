@@ -8,8 +8,9 @@ struct HomeScreen: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     
+                    
                     // MARK: Title
-                    Text("Overview")
+                    Text("Home")
                         .font(.title2)
                         .bold()
                     
@@ -26,9 +27,18 @@ struct HomeScreen: View {
             .toolbar {
                 // MARK: Notification Icon
                 ToolbarItem {
-                    Image.bell
-                        .symbolRenderingMode(.palette)
-                        .foregroundStyle(Color.customIcon, .primary)
+                    Button(action: {
+                        
+                    }, label: {
+                        Image.plus
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(Color.customIcon, .primary)
+                            .foregroundStyle(Color.white)
+                        
+                    })
+                    
                 }
                 
             }
@@ -55,13 +65,16 @@ struct ChartMaineContentView: View {
             
             CardView {
                 VStack(alignment: .leading) {
-                    ChartLabel(totalExpenses.formatted(.currency(code: "USD")), type: .title, format: "$%.02f")
+                    ChartLabel(totalExpenses.formatted(.currency(code: "USD")),
+                               type: .title, format: "$%.02f")
                     LineChart()
                 }
                 .background(Color.systemBackground)
             }
             .data(data)
-            .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
+            .chartStyle(ChartStyle(
+                backgroundColor: Color.systemBackground,
+                foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
             .frame(height: 280)
         }
     }

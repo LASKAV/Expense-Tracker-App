@@ -3,7 +3,23 @@ import Charts
 
 struct ChartsScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    
+                    // MARK: Title
+                    Text("Charts")
+                        .font(.title2)
+                        .bold()
+                    
+                }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .background(Color.customBackground)
+            .navigationBarTitleDisplayMode(.inline)
+            
+        }
     }
 }
 
