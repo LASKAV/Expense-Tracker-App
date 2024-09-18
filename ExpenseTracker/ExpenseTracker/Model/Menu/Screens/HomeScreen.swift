@@ -27,18 +27,7 @@ struct HomeScreen: View {
             .toolbar {
                 // MARK: Notification Icon
                 ToolbarItem {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image.plus
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .symbolRenderingMode(.palette)
-                            .foregroundStyle(Color.customIcon, .primary)
-                            .foregroundStyle(Color.white)
-                        
-                    })
-                    
+                    ButtonPlusExpense(isChangeColor: false)
                 }
                 
             }
@@ -48,6 +37,24 @@ struct HomeScreen: View {
     }
 }
 
+struct ButtonPlusExpense: View {
+    
+    let isChangeColor: Bool
+    
+    var body: some View {
+        Button(action: {
+            
+        }, label: {
+            Image.plus
+                .resizable()
+                .frame(width: 40, height: 40)
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(Color.customIcon, .primary)
+                .foregroundStyle(isChangeColor ? Color.black : Color.white)
+            
+        })
+    }
+}
 
 // MARK: ChartMaineContentView for screen
 struct ChartMaineContentView: View {

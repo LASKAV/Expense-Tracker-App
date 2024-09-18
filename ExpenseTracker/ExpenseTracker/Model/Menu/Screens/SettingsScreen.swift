@@ -20,25 +20,6 @@ struct SettingsScreen: View {
                         }
                         .padding(20)
                         Divider()
-                        Toggle(isOn: $isDarkMode) {
-                            Text("Dark Mode")
-                        }
-                        .padding(20)
-                        Divider()
-                        Toggle(isOn: $isDarkMode) {
-                            Text("Dark Mode")
-                        }
-                        .padding(20)
-                        Divider()
-                        Toggle(isOn: $isDarkMode) {
-                            Text("Dark Mode")
-                        }
-                        .padding(20)
-                        Divider()
-                        Toggle(isOn: $isDarkMode) {
-                            Text("Dark Mode")
-                        }
-                        .padding(20)
                     }
                     .padding()
                     .background(Color.systemBackground)

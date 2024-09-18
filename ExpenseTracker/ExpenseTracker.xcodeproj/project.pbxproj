@@ -12,6 +12,7 @@
 		6C130F542C935C0C006D16A6 /* ChartsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C130F532C935C0C006D16A6 /* ChartsScreen.swift */; };
 		6C130F562C935C46006D16A6 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C130F552C935C46006D16A6 /* SettingsScreen.swift */; };
 		6C6791162C934C5E00EAF3CF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6791152C934C5E00EAF3CF /* HomeScreen.swift */; };
+		6C6DCAEA2C9AF39500BCA138 /* ExpenseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DCAE92C9AF39500BCA138 /* ExpenseMenu.swift */; };
 		6C8593BA2C9328A6006D7DC4 /* ChartsTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8593B92C9328A6006D7DC4 /* ChartsTestScreen.swift */; };
 		6CA2917E2C79FF8A00E27A54 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA2917D2C79FF8900E27A54 /* TabModel.swift */; };
 		6CA291802C7A01A200E27A54 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA2917F2C7A01A200E27A54 /* CustomTabBar.swift */; };
@@ -40,6 +41,7 @@
 		6C130F532C935C0C006D16A6 /* ChartsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsScreen.swift; sourceTree = "<group>"; };
 		6C130F552C935C46006D16A6 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		6C6791152C934C5E00EAF3CF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		6C6DCAE92C9AF39500BCA138 /* ExpenseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseMenu.swift; sourceTree = "<group>"; };
 		6C8593B92C9328A6006D7DC4 /* ChartsTestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTestScreen.swift; sourceTree = "<group>"; };
 		6CA2917D2C79FF8900E27A54 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		6CA2917F2C7A01A200E27A54 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		6CC2AF992C2A2C9000774FBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6CCDE5822C95AD9B00977CDB /* User */,
 				6CA2917C2C79FE6F00E27A54 /* Menu */,
 				6CC2AF9A2C2A2CBA00774FBE /* Transaction.swift */,
 				6CD7D17E2C2F26DA0081E4CA /* Category.swift */,
@@ -209,6 +212,7 @@
 			children = (
 				6CC2AF9F2C2A30C000774FBE /* TransactionRow.swift */,
 				6CD7D17B2C2EDFDE0081E4CA /* RecentTransactionList.swift */,
+				6C6DCAE92C9AF39500BCA138 /* ExpenseMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +224,13 @@
 				6C124CA02C42A753005FC441 /* TransactionList.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6CCDE5822C95AD9B00977CDB /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +266,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					6CBE72EE2C2A1BAC00E54C05 = {
 						CreatedOnToolsVersion = 15.4;
@@ -303,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CC2AFA02C2A30C000774FBE /* TransactionRow.swift in Sources */,
+				6C6DCAEA2C9AF39500BCA138 /* ExpenseMenu.swift in Sources */,
 				6CA2917E2C79FF8A00E27A54 /* TabModel.swift in Sources */,
 				6C124CA12C42A753005FC441 /* TransactionList.swift in Sources */,
 				6CD845872C42F5280099F568 /* Double.swift in Sources */,
@@ -363,6 +375,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -425,6 +438,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -453,6 +467,7 @@
 				CODE_SIGN_ENTITLEMENTS = ExpenseTracker/Configurations/ExpenseTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ExpenseTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = CZ89KDXUJ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -494,6 +509,7 @@
 				CODE_SIGN_ENTITLEMENTS = ExpenseTracker/Configurations/ExpenseTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ExpenseTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = CZ89KDXUJ4;
 				ENABLE_HARDENED_RUNTIME = YES;

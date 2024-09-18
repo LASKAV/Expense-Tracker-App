@@ -52,6 +52,7 @@ final class TransactionListViewModel: ObservableObject {
         return groupedTransactions
     }
     
+    // Transactions since the first lauch time
     func accumulateTransactions() -> TransactionPrefixSum {
         print("accumulateTransactions")
         guard !transactions.isEmpty else { return [] }

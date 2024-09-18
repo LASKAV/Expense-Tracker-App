@@ -1,0 +1,7 @@
+
+import Foundation
+
+
+class UserModel {
+    let id: UUID
+}
