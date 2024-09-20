@@ -8,44 +8,45 @@ struct HomeScreen: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     
-                    
-                    // MARK: Title
-                    Text("Home")
-                        .font(.title2)
-                        .bold()
-                    
+                    HStack(spacing: 0) {
+                        
+                        // MARK: Title
+                        Text("Home")
+                            .font(.title2)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        NavigationButtonPlusExpense()
+                    }
                     ChartMaineContentView()
                     
                     // MARK: Treansaction List
                     RecentTransactionList()
                 }
-                .padding()
                 .frame(maxWidth: .infinity)
+                .padding()
+                
             }
             .background(Color.customBackground)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                // MARK: Notification Icon
-                ToolbarItem {
-                    ButtonPlusExpense().buttonStyle(WhiteButtonStyle())
-                }
-                
-            }
         }
         .navigationViewStyle(.stack) // iOS new version
         .accentColor(.primary)
     }
 }
 
-struct ButtonPlusExpense: View {
+struct NavigationButtonPlusExpense: View {
     
     var body: some View {
-        Button(action: {
-
-        }, label: {
+        NavigationLink(destination: ExpenseMenu()) {
             Image.plus
                 .resizable()
-        })
+                .frame(width: 40, height: 40)
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(Color.customIcon,.primary)
+                .foregroundStyle(Color.white)
+        }
     }
 }
 

@@ -9,6 +9,7 @@ struct Category {
 }
 
 extension Category {
+    
     static let autoAndTransport = Category(id: 1, name: "Auto & Transport", icon: .car_alt)
     static let billsAndUtilities = Category (id: 2, name: "Bills & Utilities", icon: .file_invoice_dollar)
     static let entertainment = Category(id: 3, name: "Entertainment", icon: .film)
