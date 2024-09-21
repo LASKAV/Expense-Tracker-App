@@ -15,6 +15,22 @@ extension View {
     }
 }
 
+struct SourcePickerView: View {
+    @Binding var config: PickerConfig
+    var body: some View {
+        Text(config.text)
+            .foregroundStyle(.blue)
+            .frame(height: 20)
+            .onGeometryChange(for: CGRect.self) { proxy in
+                proxy.frame(in: .global)
+            } action: { newValue in
+                config.sourceFrame = newValue
+            }
+
+    }
+}
+
+
 // Picker Config
 struct PickerConfig {
     var text: String
@@ -34,7 +50,7 @@ fileprivate struct CustomPickerView: View {
     @State private var activeText: String?
     @State private var showContents: Bool = false
     @State private var showScrollView: Bool = false
-    
+    @State private var expandItems: Bool = false
     var body: some View {
         GeometryReader {
             let size = $0.size
@@ -44,7 +60,7 @@ fileprivate struct CustomPickerView: View {
                 .opacity(showContents ? 1 : 0)
                 .ignoresSafeArea()
             
-            if showScrollView {
+         
                 ScrollView(.vertical) {
                     VStack(spacing: 0) {
                         ForEach(texts, id: \.self) { text in
@@ -59,17 +75,22 @@ fileprivate struct CustomPickerView: View {
                 .scrollPosition(id: $activeText, anchor: .center)
                 .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
                 .scrollIndicators(.hidden)
-            }
+                .opacity(showScrollView ? 1 : 0)
+                .allowsHitTesting(expandItems && showScrollView)
+            
         }
         .task {
             /// Doing actions only for the frst time
             guard activeText == nil else { return }
+            activeText = config.text
+            showScrollView = true
         }
         .onChange(of: activeText) { oldValue, newValue in
             if let newValue {
                 config.text = newValue
             }
         }
+       
     }
     /// Card View
     @ViewBuilder
@@ -80,8 +101,11 @@ fileprivate struct CustomPickerView: View {
             Text(text)
                 .fontWeight(.semibold)
                 .foregroundStyle(config.text == text ? .blue : .gray)
+                .offset(y: offset(proxy))
+                .opacity(expandItems ? 1 : config.text == text ? 1 : 0)
+                .clipped()
                 .offset(x: -width * 0.3)
-                .rotationEffect(.init(degrees: -rortation(proxy, size)), anchor: .topTrailing)
+                .rotationEffect(.init(degrees: expandItems ? -rortation(proxy, size) : .zero), anchor: .topTrailing)
                 .opacity(opacity(proxy, size))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
         }
@@ -89,6 +113,11 @@ fileprivate struct CustomPickerView: View {
         .lineLimit(1)
     }
     /// View Transition Helpers
+    private func offset(_ proxy: GeometryProxy) -> CGFloat {
+        let minY = proxy.frame(in: .scrollView(axis: .vertical)).minY
+        return expandItems ? 0 : -minY
+    }
+    
     private func rortation(_ proxy: GeometryProxy, _ size: CGSize) -> CGFloat {
             
         let height = size.height * 0.5
@@ -121,7 +150,7 @@ struct CustomPicker: View {
 
 #Preview {
     @Previewable
-    @State var config = PickerConfig(text: "Category")
+    @State var config = PickerConfig(text: "Utilities")
     let categories = [
             "Utilities",
             "Cellphone & Internet",
