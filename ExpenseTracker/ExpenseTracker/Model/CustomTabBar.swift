@@ -17,7 +17,6 @@ struct CustomTabBar: View {
                     Label("Charts", systemImage: "cellularbars")
                 }
             
-            
             SettingsScreen()
                 .tabItem {
                     Label("Settings", systemImage: "gear")

@@ -15,18 +15,19 @@ extension View {
     }
 }
 
+/// Source View
 struct SourcePickerView: View {
     @Binding var config: PickerConfig
     var body: some View {
         Text(config.text)
             .foregroundStyle(.blue)
             .frame(height: 20)
+            .opacity(config.show ? 0 : 1)
             .onGeometryChange(for: CGRect.self) { proxy in
                 proxy.frame(in: .global)
             } action: { newValue in
                 config.sourceFrame = newValue
             }
-
     }
 }
 
@@ -78,20 +79,85 @@ fileprivate struct CustomPickerView: View {
                 .opacity(showScrollView ? 1 : 0)
                 .allowsHitTesting(expandItems && showScrollView)
             
+            let offset: CGSize = .init(
+                width: showContents ? size.width * -0.3 : config.sourceFrame.minX,
+                height: showContents ? -10 : config.sourceFrame.minY)
+            
+            Text(config.text)
+                .fontWeight(showContents ? .semibold : .regular)
+                .foregroundStyle(.blue)
+                .frame(height: 20)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: showContents ? .trailing : .topLeading)
+                .offset(offset)
+                .opacity(showScrollView ? 0 : 1)
+                .ignoresSafeArea(.all, edges: showContents ? [] : .all)
+            
+            CloseButton()
+            
         }
         .task {
             /// Doing actions only for the frst time
             guard activeText == nil else { return }
             activeText = config.text
+            withAnimation(.easeInOut(duration: 0.3)) {
+                showContents = true
+            }
+            try? await Task.sleep(for: .seconds(0.3))
             showScrollView = true
+            
+            withAnimation(.snappy(duration: 0.3, extraBounce: 0)) {
+                
+            }
         }
         .onChange(of: activeText) { oldValue, newValue in
             if let newValue {
                 config.text = newValue
             }
         }
-       
     }
+    
+    /// Close Button
+    @ViewBuilder
+    func CloseButton() -> some View {
+        Button {
+            Task {
+                /// Order
+                /// 1. Minimistig all the elements
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    expandItems = false
+                }
+                
+                try? await Task.sleep(for: .seconds(0.2))
+                /// 2. Hiding ScrollView and Placing the Active item back
+                /// to it's source position
+                showScrollView = false
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    showContents = false
+                }
+                
+                try? await Task.sleep(for: .seconds(0.2))
+                
+                /// 3. Finally Closing the Overlay View
+                config.show = false
+            }
+            
+        } label: {
+            Image(systemName: "xmark")
+                .font(.title2)
+                .foregroundStyle(Color.primary)
+                .frame(width: 45, height: 45)
+                .contentShape(.rect)
+        }
+        /// Making it right next to the active picker element
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+        .offset(x: expandItems ? -50 : 50, y: -10)
+
+    }
+    
+
     /// Card View
     @ViewBuilder
     private func CardView(_ text: String, size: CGSize) -> some View {
