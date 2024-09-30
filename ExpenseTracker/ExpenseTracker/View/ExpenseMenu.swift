@@ -44,7 +44,6 @@ struct ExpenseMenu: View {
                                 Spacer(minLength: 0)
                                 SourcePickerView(config: $config)
                             }
-                     
                         }
                         
                         Divider()
@@ -63,8 +62,6 @@ struct ExpenseMenu: View {
                                 Spacer(minLength: 0)
                                 SourcePickerView(config: $config)
                             }
-                    
-                     
                         }
             
                         Divider()
@@ -81,7 +78,6 @@ struct ExpenseMenu: View {
                                 Spacer(minLength: 0)
                                 SourcePickerView(config: $config)
                             }
-
                         }
                         
                         Divider()
@@ -100,7 +96,6 @@ struct ExpenseMenu: View {
                                 Spacer(minLength: 0)
                                 SourcePickerView(config: $config)
                             }
-                           
                         }
                     }
                     .padding(20)
