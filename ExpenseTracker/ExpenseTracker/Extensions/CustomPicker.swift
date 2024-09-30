@@ -105,11 +105,12 @@ fileprivate struct CustomPickerView: View {
             withAnimation(.easeInOut(duration: 0.3)) {
                 showContents = true
             }
+            
             try? await Task.sleep(for: .seconds(0.3))
             showScrollView = true
             
             withAnimation(.snappy(duration: 0.3, extraBounce: 0)) {
-                
+                expandItems = true
             }
         }
         .onChange(of: activeText) { oldValue, newValue in
@@ -215,28 +216,5 @@ struct CustomPicker: View {
 }
 
 #Preview {
-    @Previewable
-    @State var config = PickerConfig(text: "Utilities")
-    let categories = [
-            "Utilities",
-            "Cellphone & Internet",
-            "Mortgage",
-            "Insurance",
-            "Debt Repayment",
-            "Taxes",
-            "Gifts & Donations",
-            "Entertainment",
-            "Clothing & Accessories",
-            "Memberships & Subscriptions",
-            "Travel",
-            "Business Investment",
-            "Transportation",
-            "Food & Drinks",
-            "Groceries",
-            "Repairs",
-            "Personal Care",
-            "Healthcare",
-            "Housing / Rent" ]
-    
-    CustomPickerView(texts: categories, config: $config)
+    ExpenseMenu()
 }
