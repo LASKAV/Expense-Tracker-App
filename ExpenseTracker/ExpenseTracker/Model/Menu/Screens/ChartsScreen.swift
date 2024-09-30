@@ -15,6 +15,8 @@ struct ChartsScreen: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
+                
+
             }
             .background(Color.customBackground)
             .navigationBarTitleDisplayMode(.inline)
