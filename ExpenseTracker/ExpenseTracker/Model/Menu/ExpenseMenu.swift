@@ -19,13 +19,14 @@ struct ExpenseMenu: View {
         "Housing / Rent" ]
     @State private var config: PickerConfig = .init(text: "Utilities")
     var body: some View {
+        
         NavigationStack {
+            
             ScrollView {
                 
                 Spending()
                 
                 NavigationStack {
-                    
                     
                     VStack(alignment: .center, spacing: 30) {
                         
@@ -63,7 +64,7 @@ struct ExpenseMenu: View {
                                 SourcePickerView(config: $config)
                             }
                         }
-            
+                        
                         Divider()
                         // MARK: Title
                         Button {
@@ -81,7 +82,7 @@ struct ExpenseMenu: View {
                         }
                         
                         Divider()
-
+                        
                         // MARK: Spent
                         
                         Button {
@@ -136,11 +137,11 @@ struct Spending: View {
                 .foregroundStyle(Color.customIcon)
                 .font(.system(size: 35))
                 .bold()
-                
+            
         }
         .padding([.bottom, .top], 50)
         .padding([.leading, .trailing], 100)
-//        .border(.blue)
+        //        .border(.blue)
     }
 }
 
